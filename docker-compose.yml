@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  radicale:
+    build: ./
+    container_name: radicale
+    ports:
+      - "5232:5232"
+    volumes:
+      - radicale-data:/var/lib/radicale
+    configs:
+      - source: radicale-config
+        target: /etc/radicale/config
+      - source: radicale-users
+        target: /etc/radicale/users
+    restart: unless-stopped
+volumes:
+  radicale-data:
+configs:
+  radicale-config:
+    file: ./configs/config
+  radicale-users:
+    file: ./configs/users
