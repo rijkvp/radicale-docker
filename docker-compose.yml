@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   radicale:
-    build: ./
+    image: ghcr.io/rijkvp/radicale:latest
     container_name: radicale
     ports:
       - "5232:5232"
