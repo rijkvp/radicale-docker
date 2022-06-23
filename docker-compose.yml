@@ -4,7 +4,7 @@ services:
     image: ghcr.io/rijkvp/radicale:latest
     container_name: radicale
     ports:
-      - "5232:5232"
+      - "80:80"
     volumes:
       - radicale-data:/var/lib/radicale
     configs:
