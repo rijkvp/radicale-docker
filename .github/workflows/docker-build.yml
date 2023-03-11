@@ -1,0 +1,19 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [ "main" ]
+  schedule:
+  - cron: "30 4 5 * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag ghcr.io/rijkvp/radicale
+    - name: Log in to registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+    - name: Push the Docker image
+      run: docker push ghcr.io/rijkvp/radicale:latest
