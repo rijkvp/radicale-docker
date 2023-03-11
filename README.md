@@ -1,4 +1,4 @@
-# Radicale docker image
+# Radicale Docker image
 
 [![Docker Build](https://github.com/rijkvp/radicale-docker/actions/workflows/docker-build.yml/badge.svg)](https://github.com/rijkvp/radicale-docker/actions/workflows/docker-build.yml)
 
